@@ -42,35 +42,49 @@ class Contact extends React.Component {
 
   getBookedDates() {
     const excludedDates = []
-    const excludedDatesArray = []
+
+    const today = new Date()
+    today.setDate(today.getDate() + 7)
+    let date = `${today.getFullYear()}-${today.getMonth() + 1}-${today.getDate()}`;
 
     axios.get('http://localhost:5000/contact/')
       .then(({data}) => {
         data.forEach(e => {
           excludedDates.push(new Date(e.date))
           let dateInArray = `${new Date(e.date).getFullYear()}-${new Date(e.date).getMonth() + 1}-${new Date(e.date).getDate()}`
-          excludedDatesArray.push(dateInArray.toString().toLowerCase())
+          const exists = dateInArray.toString() === date
+
+          let i;
+          for (i = 0; i < data.length; i++) {
+            if (exists) {
+                today.setDate(today.getDate() + 1)
+                date = `${today.getFullYear()}-${today.getMonth() + 1}-${today.getDate()}`;
+            }
+          }
+
+          this.setState({
+            startDate: new Date(date),
+            date: new Date(date)
+          })
         })
 
         this.setState({excludedDates: excludedDates})
       }).catch(err => console.log(err))
 
-   this.getStartDate(excludedDatesArray)
+  //this.getStartDate()
   }
 
-  getStartDate(excludedDatesArray) {
+  getStartDate() {
     const today = new Date()
     today.setDate(today.getDate() + 7)
     const date = `${today.getFullYear()}-${today.getMonth() + 1}-${today.getDate()}`;
     this.setState({
-      startDate: new Date(date),
-      date: new Date(date)
+      date: new Date(date) //technically start 7 days from now
     })
   }
 
   handleChange = date => {
     this.setState({
-      startDate: date,
       date: date
     });
   };
@@ -112,7 +126,7 @@ class Contact extends React.Component {
     this.preferred_packageRef.current.value = ''
     this.mobileRef.current.value = ''
     this.messageRef.current.value = ''
-    this.getStartDate()
+    //this.getStartDate()
   }
 
   render() {
@@ -163,8 +177,8 @@ class Contact extends React.Component {
                       <DatePicker
                         className={'form-control'}
                         minDate={this.state.startDate}
-                        startDate={this.state.startDate}
-                        selected={this.state.startDate}
+                        // startDate={this.state.startDate}
+                        selected={this.state.date}
                         onChange={this.handleChange}
                         excludeDates={this.state.excludedDates}
                       />
