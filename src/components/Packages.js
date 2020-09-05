@@ -10,7 +10,6 @@ class Packages extends React.Component {
   componentDidMount() {
     axios.get('http://localhost:5000/packages/')
       .then(({data}) => {
-        console.log(data)
         this.setState({packages: data})
       }).catch(err => console.log(err))
   }

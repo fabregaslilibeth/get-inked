@@ -21,16 +21,17 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/components" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/backend/routes" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="nodejs_package_manager_path" value="yarn" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\laragon\www\one-flash\src\components" />
-      <recent name="D:\laragon\www\one-flash\backend\models" />
       <recent name="D:\laragon\www\one-flash\backend\routes" />
+      <recent name="D:\laragon\www\one-flash\backend\models" />
+      <recent name="D:\laragon\www\one-flash\src\components" />
       <recent name="D:\laragon\www\one-flash\backend" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
@@ -46,7 +47,7 @@
       <option name="presentableId" value="Default" />
       <updated>1599275030847</updated>
       <workItem from="1599275031926" duration="17416000" />
-      <workItem from="1599293561976" duration="8863000" />
+      <workItem from="1599293561976" duration="24551000" />
     </task>
     <servers />
   </component>
@@ -58,9 +59,17 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="740" y="275" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1599290427478" />
-    <state x="1235" y="233" width="672" height="678" key="search.everywhere.popup" timestamp="1599302895461">
+    <state x="667" y="253" width="585" height="534" key="find.popup" timestamp="1599315364140">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="1235" y="233" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1599302895461" />
+    <state x="667" y="253" width="585" height="534" key="find.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1599315364140" />
+    <state x="616" y="240" key="run.anything.popup" timestamp="1599307451189">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="616" y="240" key="run.anything.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1599307451189" />
+    <state x="1235" y="233" width="672" height="678" key="search.everywhere.popup" timestamp="1599315345512">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="1235" y="233" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1599315345512" />
   </component>
 </project>

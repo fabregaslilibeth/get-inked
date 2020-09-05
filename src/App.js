@@ -12,7 +12,7 @@ function App() {
     <Router>
       <div className="container-fluid project-container">
         <Link to="/" className="nav-link">
-          <h1 className="logo text-center py-4">One Flush Photography</h1></Link>
+          <h1 className="logo text-center py-4">One Flash Photography</h1></Link>
 
         <Navbar/>
 
