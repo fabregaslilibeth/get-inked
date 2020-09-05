@@ -21,13 +21,15 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/backend" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/backend/models" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\laragon\www\one-flash\backend\models" />
+      <recent name="D:\laragon\www\one-flash\backend\routes" />
       <recent name="D:\laragon\www\one-flash\backend" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
@@ -43,7 +45,7 @@
       <option name="presentableId" value="Default" />
       <updated>1599275030847</updated>
       <workItem from="1599275031926" duration="17416000" />
-      <workItem from="1599293561976" duration="12000" />
+      <workItem from="1599293561976" duration="2230000" />
     </task>
     <servers />
   </component>
@@ -55,9 +57,9 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="740" y="275" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1599290427478" />
-    <state x="1235" y="233" width="672" height="678" key="search.everywhere.popup" timestamp="1599289278350">
+    <state x="1235" y="233" width="672" height="678" key="search.everywhere.popup" timestamp="1599294740930">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="1235" y="233" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1599289278350" />
+    <state x="1235" y="233" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1599294740930" />
   </component>
 </project>
