@@ -1,4 +1,6 @@
 import React from "react"
+import Packages from "./Packages";
+import Contact from "./Contact";
 
 class Home extends React.Component {
   render () {
@@ -14,7 +16,7 @@ class Home extends React.Component {
               <div className="row">
                 <div className="about-text-container col-lg-6 col-md-12 col-sm-12">
                   <div className="headers">
-                    <h4>So this is us..</h4>
+                    <h4 className="custom-header">So this is us..</h4>
                     <h1>about</h1>
                   </div>
                   <p className="about-text">They say that anyone can pick up a camera and start taking beautiful
@@ -35,7 +37,7 @@ class Home extends React.Component {
         {/*// <!-- end of about row -->*/}
 
         <div className="row" id="testimonials">
-          <h1 className="text-center mx-auto ">What our clients say about us</h1>
+          <h1 className="text-center mx-auto custom-header my-4">What our clients say about us</h1>
           <div className="col-lg-12" id="testimonials">
             {/*// <!-- START CAROUSEL HERE -->*/}
             <div className="testi-wrapper mx-auto">
@@ -76,93 +78,11 @@ class Home extends React.Component {
         {/*// <!-- end testi row -->*/}
 
         <hr/>
-        <div className="row my-4" id="investment">
-          <div className="col-lg-12">
-            <h1 className="text-center py-4">PACKAGES</h1>
 
-            <div className="col-lg-6 text-center mx-auto">
-              <p>Peak Summer 2019 collections start at P50,000 and include at least 6 hours of continuous wedding
-                photography, a collection of digital images and a shareable online gallery.</p>
-
-              <table className="table table-striped mx-auto text-center">
-                <thead>
-                <tr>
-                  <th scope="col">Package</th>
-                  <th scope="col">Inclusions</th>
-                  <th scope="col">Price</th>
-                </tr>
-                </thead>
-
-                <tbody id="packageList">
-
-                </tbody>
-              </table>
-
-              <p>Additional files, albums and other products are available for purchase.</p>
-              <p>Additional sales tax is applicable to all sessions and products.</p>
-
-            </div>
-          </div>
-        </div>
-        {/*// <!-- end of row-investments -->*/}
+       <Packages />
 
         <hr/>
-        <div className="row my-4 py-4" id="contact">
-          <div className="col-lg-12">
-            <div className="row">
-              <div className="col-lg-5 mx-auto">
-                <div className="form-wrapper p-4 col-lg-12">
-                  <h2 className="contact-h2">contact</h2>
-                  <form id="createContact">
-
-                    <div className="form-group">
-                      <label htmlFor="name1">Name: </label>
-                      <input type="text" id="name1" className="form-control" name="name1" placeholder="Your Name"/>
-                    </div>
-                    <div className="form-group">
-                      <label htmlFor="name2">Partner's Name: </label>
-                      <input type="text" id="name2" className="form-control" name="name2"
-                             placeholder="Your Partner's Name"/>
-                    </div>
-
-                    <div className="form-group">
-                      <label htmlFor="package_id">Preferred Package </label>
-                      <select name="package_id" id="package_id"
-                              className="packageOptions border-0 text-center form-control">
-                        <option value="">Your preferred package</option>
-                      </select>
-                    </div>
-
-                    <div className="form-group">
-                      <label htmlFor="wedding_date">Preferred Date</label>
-                      <input type="date" id="wedding_date" className="form-control" name="wedding_date"
-                             placeholder="Preferred Date"/>
-                    </div>
-
-                    <div className="form-group">
-                      <label htmlFor="mobile">Mobile: </label>
-                      <input type="text" id="mobile" className="form-control" name="mobile" placeholder="Mobile"/>
-                    </div>
-
-                    <div className="form-group">
-                      <label htmlFor="content">Message: </label>
-                      <textarea id="message" rows="3" className="form-control" name="message"
-                                placeholder="Message"> </textarea>
-                    </div>
-
-                    <button id="createReviewButton"
-                            className="btn btn-outline-secondary btn-block" data-dismiss="modal"> Submit
-                    </button>
-                  </form>
-
-                </div>
-              </div>
-
-            </div>
-
-          </div>
-        </div>
-        {/*// <!-- end of row for contact -->*/}
+       <Contact />
 
         <div className="row" id="footer">
           <div className="col-lg-10 mx-auto">
