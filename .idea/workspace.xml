@@ -28,14 +28,14 @@
     <property name="nodejs_package_manager_path" value="yarn" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\laragon\www\mern-exercise-tracker\src\components" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\laragon\www\one-flash\backend\routes" />
       <recent name="D:\laragon\www\one-flash\backend\models" />
       <recent name="D:\laragon\www\one-flash\src\components" />
       <recent name="D:\laragon\www\one-flash\backend" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="D:\laragon\www\mern-exercise-tracker\src\components" />
     </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />

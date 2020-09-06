@@ -43,35 +43,16 @@ class Contact extends React.Component {
   getBookedDates() {
     const excludedDates = []
 
-    const today = new Date()
-    today.setDate(today.getDate() + 7)
-    let date = `${today.getFullYear()}-${today.getMonth() + 1}-${today.getDate()}`;
-
     axios.get('http://localhost:5000/contact/')
       .then(({data}) => {
         data.forEach(e => {
           excludedDates.push(new Date(e.date))
-          let dateInArray = `${new Date(e.date).getFullYear()}-${new Date(e.date).getMonth() + 1}-${new Date(e.date).getDate()}`
-          const exists = dateInArray.toString() === date
-
-          let i;
-          for (i = 0; i < data.length; i++) {
-            if (exists) {
-                today.setDate(today.getDate() + 1)
-                date = `${today.getFullYear()}-${today.getMonth() + 1}-${today.getDate()}`;
-            }
-          }
-
-          this.setState({
-            startDate: new Date(date),
-            date: new Date(date)
-          })
         })
 
         this.setState({excludedDates: excludedDates})
       }).catch(err => console.log(err))
 
-  //this.getStartDate()
+    this.getStartDate()
   }
 
   getStartDate() {
@@ -79,7 +60,7 @@ class Contact extends React.Component {
     today.setDate(today.getDate() + 7)
     const date = `${today.getFullYear()}-${today.getMonth() + 1}-${today.getDate()}`;
     this.setState({
-      date: new Date(date) //technically start 7 days from now
+      startDate: new Date(date) //technically start 7 days from now
     })
   }
 
@@ -108,11 +89,11 @@ class Contact extends React.Component {
     axios.post('http://localhost:5000/contact/add', inquiry)
       .then(({data}) => {
         this.setState({
-          result: 'We\'ve received your inquiry. Please expect a call from us.',
+          result: 'Thank you for your inquiry. We\'ll get in touch soon!',
           excludedDates: excludedDates,
         })
 
-       this.clearFields()
+        this.clearFields()
 
         setTimeout(() => {
           this.setState({result: ''})
@@ -126,7 +107,6 @@ class Contact extends React.Component {
     this.preferred_packageRef.current.value = ''
     this.mobileRef.current.value = ''
     this.messageRef.current.value = ''
-    //this.getStartDate()
   }
 
   render() {
@@ -148,18 +128,18 @@ class Contact extends React.Component {
 
                     <div className="form-group">
                       <label htmlFor="name1">Name: </label>
-                      <input ref={this.nameRef} type="text" id="name1" className="form-control" name="name1"
+                      <input required ref={this.nameRef} type="text" id="name1" className="form-control" name="name1"
                              placeholder="Your Name"/>
                     </div>
                     <div className="form-group">
                       <label htmlFor="name2">Partner's Name: </label>
-                      <input ref={this.partnerRef} type="text" id="name2" className="form-control" name="name2"
+                      <input required ref={this.partnerRef} type="text" id="name2" className="form-control" name="name2"
                              placeholder="Your Partner's Name"/>
                     </div>
 
                     <div className="form-group">
                       <label htmlFor="package_id">Preferred Package </label>
-                      <select name="package_id" id="package_id"
+                      <select required name="package_id" id="package_id"
                               className="packageOptions border-0 form-control" ref={this.packageRef}>
                         <option value="">Please select a package</option>
                         {Object.keys(this.state.packages).map(
@@ -187,22 +167,20 @@ class Contact extends React.Component {
 
                     <div className="form-group">
                       <label htmlFor="mobile">Mobile: </label>
-                      <input ref={this.mobileRef} type="text" id="mobile" className="form-control" name="mobile"
+                      <input required ref={this.mobileRef} type="number" id="mobile" className="form-control" name="mobile"
                              placeholder="Mobile"/>
                     </div>
 
                     <div className="form-group">
                       <label htmlFor="content">Message: </label>
                       <textarea ref={this.messageRef} id="message" rows="3" className="form-control" name="message"
-                                placeholder="Message"> </textarea>
+                                placeholder="Message" minLength="20" required> </textarea>
                     </div>
 
                     <button id="createReviewButton"
                             className="btn btn-outline-secondary btn-block" data-dismiss="modal"> Submit
                     </button>
                   </form>
-
-
                 </div>
               </div>
 
