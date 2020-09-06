@@ -1,5 +1,4 @@
 const mongoose = require('mongoose')
-//const bcrypt = require('bcrypt');
 
 const Schema = mongoose.Schema
 
@@ -21,7 +20,7 @@ const userSchema = new Schema({
     required: true,
     default: '',
   },
-  isDeleted: {
+  isAdmin: {
     type: Boolean,
     default: false,
   },
