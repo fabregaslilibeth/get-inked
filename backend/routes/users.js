@@ -1,20 +1,71 @@
 const router = require('express').Router()
+const bcrypt = require('bcryptjs')
+const jwt = require('jsonwebtoken')
+
 let User = require('../models/user.model')
 
-router.route('/').get((req, res) => {
-  User.find()
-    .then(users => res.json(users))
-    .catch(err => res.status(400).json('Error: ' + err))
-})
+// router.route('/').get((req, res) => {
+//   User.find()
+//     .then(users => res.json(users))
+//     .catch(err => res.status(400).json('Error: ' + err))
+// })
 
-router.route('/add').post((req, res) => {
-  const username = req.body.username;
+router.post('/', (req, res) => {
+  const {name, email, password} = req.body;
 
-  const newUser = new User({username})
+  //simple validation
+  if (!name || !email || !password) {
+    return res.status(400).json({msg: 'All fields are required'})
+  }
 
-  newUser.save()
-    .then(() => res.json('User added!'))
-    .catch(err => res.status(400).json('Error: ' + err))
-})
+  User.findOne({email})
+    .then(user => {
+      if (user) return res.status(400).json({msg: 'User already exists'})
+
+      const newUser = new User({
+        name,
+        email,
+        password
+      })
+
+      //create salt && hash
+      bcrypt.genSalt(10, (err, salt) => {
+        bcrypt.hash(newUser.password, salt, (err, hash) => {
+          if (err) throw err;
+          newUser.password = hash
+          newUser.save()
+            .then(user => {
+
+              jwt.sign(
+                {id: user.id},
+                process.env.JWT_SECRET,
+                {expiresIn: 3600},
+                (err, token) => {
+                  if (err) throw  err;
+                  res.json({
+                    token,
+                    user: {
+                      id: user.id,
+                      name: user.name,
+                      email: user.email
+                    }
+                  })
+                }
+              )
+            })
+        })
+      })
+    })
+});
+
+// router.route('/add').post((req, res) => {
+//   const username = req.body.username;
+//
+//   const newUser = new User({username})
+//
+//   newUser.save()
+//     .then(() => res.json('User added!'))
+//     .catch(err => res.status(400).json('Error: ' + err))
+// })
 
 module.exports = router

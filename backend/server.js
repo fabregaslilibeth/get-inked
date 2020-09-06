@@ -8,12 +8,13 @@ const app = express()
 const port = process.env.PORT || 5000
 
 app.use(cors()) //middleware
-app.use(express.json()) //allows us to parse json
+app.use(express.json()) //allows us to parse json, this used to be the body parser
 
 const uri = process.env.ATLAS_URI
 mongoose.connect(uri, {
   useNewUrlParser: true,
-  useCreateIndex: true
+  useCreateIndex: true,
+  useUnifiedTopology: true
 })
 
 const connection = mongoose.connection
@@ -22,11 +23,13 @@ connection.once('open', () => {
 })
 
 const exercisesRouter = require('./routes/exercises')
+const authRouter = require('./routes/auth')
 const usersRouter = require('./routes/users')
 const packagesRouter = require('./routes/packages')
 const contactRouter = require('./routes/contact')
 
 app.use('/exercises', exercisesRouter)
+app.use('/auth', authRouter)
 app.use('/users', usersRouter)
 app.use('/packages', packagesRouter)
 app.use('/contact', contactRouter)
