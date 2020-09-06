@@ -23,8 +23,16 @@ class Register extends React.Component {
 
     axios.post('http://localhost:5000/register', credentials)
       .then(({data}) => {
-        this.setState({result: data})
-        this.clearFields()
+        if (data.status === 404) {
+          this.setState({result: data.message})
+        } else {
+          sessionStorage.setItem('token', data.token)
+          sessionStorage.setItem('isAdmin', data.user.isAdmin)
+          window.location.href = '/'
+
+          //this.props.getToken(data.token, data.user.isAdmin)
+          this.clearFields()
+        }
       }).catch(({data}) =>
       this.setState({result: data})
     )
