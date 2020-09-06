@@ -26,11 +26,13 @@ const exercisesRouter = require('./routes/exercises')
 const authRouter = require('./routes/auth')
 const usersRouter = require('./routes/users')
 const packagesRouter = require('./routes/packages')
+const contactRouter = require('./routes/contact')
 
 app.use('/exercises', exercisesRouter)
 app.use('/auth', authRouter)
 app.use('/users', usersRouter)
 app.use('/packages', packagesRouter)
+app.use('/contact', contactRouter)
 
 app.listen(port, () => {
   console.log(`Server is running on port: ${port}`)

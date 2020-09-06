@@ -33,7 +33,6 @@ class CreateExercise extends React.Component {
 
       axios.post('http://localhost:5000/exercises/add', exercise)
         .then(res => console.log(res.data))
-      console.log(exercise)
     }
   // }
 
