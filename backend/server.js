@@ -23,14 +23,16 @@ connection.once('open', () => {
 })
 
 const exercisesRouter = require('./routes/exercises')
-const authRouter = require('./routes/auth')
+const loginRouter = require('./routes/login')
 const usersRouter = require('./routes/users')
+const registerRouter = require('./routes/register')
 const packagesRouter = require('./routes/packages')
 const contactRouter = require('./routes/contact')
 
 app.use('/exercises', exercisesRouter)
-app.use('/auth', authRouter)
+app.use('/login', loginRouter)
 app.use('/users', usersRouter)
+app.use('/register', registerRouter)
 app.use('/packages', packagesRouter)
 app.use('/contact', contactRouter)
 

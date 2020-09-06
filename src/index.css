@@ -3,6 +3,7 @@
   padding: 0;
   box-sizing: border-box;
   font-family: 'Martel', serif;
+  scroll-behavior: smooth;
   /*background: rgb(30, 51, 64);*/
   /*background: rgb(54, 98, 115);*/
   /*background: rgb(138, 176, 191);*/

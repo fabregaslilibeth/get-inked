@@ -4,19 +4,18 @@ const jwt = require('jsonwebtoken')
 
 let User = require('../models/user.model')
 
-// @desc get all users
-// @access admin
 router.post('/', (req, res) => {
   const {name, email, password} = req.body;
 
   //simple validation
   if (!name || !email || !password) {
-    return res.status(400).json({msg: 'All fields are required'})
+    //return res.status(400).json({msg: 'All fields are required'})
+    return res.json({status: 404, message: 'All fields are required'})
   }
 
   User.findOne({email})
     .then(user => {
-      if (user) return res.status(400).json({msg: 'User already exists'})
+      if (user) return res.json({status: 404, message: 'User already exists'})
 
       const newUser = new User({
         name,
@@ -43,11 +42,13 @@ router.post('/', (req, res) => {
                     user: {
                       id: user.id,
                       name: user.name,
-                      email: user.email
+                      email: user.email,
+                      isAdmin: user.isAdmin
                     }
                   })
                 }
               )
+            //  res.json({status: 200, message: 'Registered successfully.'})
             })
         })
       })
