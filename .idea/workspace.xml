@@ -21,23 +21,26 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/pages" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="yarn" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="D:\laragon\www\one-flash\src\pages" />
-      <recent name="D:\laragon\www\mern-exercise-tracker\src\components" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\laragon\www\one-flash\src\pages" />
       <recent name="D:\laragon\www\one-flash\src\components" />
       <recent name="D:\laragon\www\one-flash\backend\routes" />
       <recent name="D:\laragon\www\one-flash\backend\models" />
       <recent name="D:\laragon\www\one-flash\backend" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\laragon\www\one-flash\src\pages" />
+      <recent name="D:\laragon\www\mern-exercise-tracker\src\components" />
     </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -51,7 +54,11 @@
       <workItem from="1599275031926" duration="17416000" />
       <workItem from="1599293561976" duration="24551000" />
       <workItem from="1599377984821" duration="628000" />
-      <workItem from="1599389945993" duration="10212000" />
+      <workItem from="1599389945993" duration="11042000" />
+      <workItem from="1599443129226" duration="783000" />
+      <workItem from="1599474074490" duration="11030000" />
+      <workItem from="1599531414146" duration="10000" />
+      <workItem from="1599563348858" duration="1465000" />
     </task>
     <servers />
   </component>
@@ -59,21 +66,25 @@
     <option name="version" value="3" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="740" y="275" key="FileChooserDialogImpl" timestamp="1599394875714">
+    <state x="740" y="275" key="FileChooserDialogImpl" timestamp="1599531422357">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="740" y="275" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1599394875714" />
+    <state x="740" y="275" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1599531422357" />
+    <state x="92" y="92" width="1736" height="856" key="dock-window-1" timestamp="1599474737294">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="92" y="92" width="1736" height="856" key="dock-window-1/0.0.1920.1040@0.0.1920.1040" timestamp="1599474737294" />
     <state x="667" y="253" width="585" height="534" key="find.popup" timestamp="1599390464234">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="667" y="253" width="585" height="534" key="find.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1599390464234" />
-    <state x="616" y="240" key="run.anything.popup" timestamp="1599307451189">
+    <state x="616" y="240" key="run.anything.popup" timestamp="1599474780924">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="616" y="240" key="run.anything.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1599307451189" />
-    <state x="1235" y="233" width="672" height="678" key="search.everywhere.popup" timestamp="1599399833270">
+    <state x="616" y="240" key="run.anything.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1599474780924" />
+    <state x="1235" y="233" width="672" height="678" key="search.everywhere.popup" timestamp="1599479711128">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="1235" y="233" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1599399833270" />
+    <state x="1235" y="233" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1599479711128" />
   </component>
 </project>

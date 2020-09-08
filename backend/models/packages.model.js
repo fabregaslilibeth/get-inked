@@ -9,31 +9,31 @@ const packageSchema = new Schema({
   },
   album: {
     type: String,
-    required: true,
+    required: false,
   },
   video: {
     type: String,
-    required: true,
+    required: false,
   },
   frame: {
     type: String,
-    required: true,
+    required: false,
   },
   prenuptial: {
     type: String,
-    required: true,
+    required: false,
   },
   photographers: {
     type: Number,
-    required: true,
+    required: false,
   },
   videographers: {
     type: Number,
-    required: true,
+    required: false,
   },
   lightsmen: {
     type: Number,
-    required: true,
+    required: false,
   },
 }, {
   timestamps: true

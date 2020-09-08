@@ -1,5 +1,6 @@
 const router = require('express').Router()
 let Package = require('../models/packages.model')
+const auth = require('../middleware/auth')
 
 router.route('/').get((req, res) => {
   Package.find()
@@ -45,18 +46,17 @@ router.route('/:id').delete((req, res) => {
     .catch(err => res.status(400).json('Error: ' + err))
 })
 
-
-router.route('/update/:id').post((req, res) => {
+router.post('/update/:id', auth, (req, res) => {
   Package.findById(req.params.id)
     .then(packge => {
-      packge.name = req.body.name
-      packge.album = req.body.album
-      packge.video = req.body.video
-      packge.frame = req.body.frame
-      packge.prenuptial = req.body.prenuptial
-      packge.photographers = Number(req.body.photographers)
-      packge.videographers = Number(req.body.videographers)
-      packge.lightsmen = Number(req.body.lightsmen)
+      packge.name = req.body.packge.name
+      packge.album = req.body.packge.album
+      packge.video = req.body.packge.video
+      packge.frame = req.body.packge.frame
+      packge.prenuptial = 'req.body.packge.prenuptial'
+      packge.photographers = Number(req.body.packge.photographers)
+      packge.videographers = Number(req.body.packge.videographers)
+      packge.lightsmen = Number(req.body.packge.lightsmen)
 
       packge.save()
         .then(() => res.json('Package updated!'))
