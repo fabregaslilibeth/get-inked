@@ -394,3 +394,31 @@ menu  {
   font-size: 3rem;
   color: rgb(54, 98, 115);
 }
+
+.calendar-container {
+  background: rgba(113,5,75,.23);
+  box-shadow: 2px 2px 5px gray;
+  border-radius: 10px;
+  padding: 10px 10px 0 10px;
+}
+
+.fc .fc-col-header-cell-cushion, .fc-toolbar-title, .fc-daygrid-day-number {
+  color: white;
+  padding-top: 10px;
+}
+
+.event-detail {
+  color: #366273;
+}
+
+.clicked-event {
+  //background: rgba(255,255,255,.8);
+  box-shadow: 2px 2px 5px gray;
+  border-radius: 10px;
+  padding: 10px 10px 0 10px;
+}
+
+.clicked-event-header {
+  font-family: 'Kaushan Script', cursive;
+  color: rgb(54, 98, 115);
+}
