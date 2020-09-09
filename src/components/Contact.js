@@ -16,6 +16,7 @@ class Contact extends React.Component {
   packageRef = React.createRef()
 
   state = {
+    userId: '',
     name: '',
     partner: '',
     preferred_package: '',
@@ -31,6 +32,9 @@ class Contact extends React.Component {
   componentDidMount() {
     this.getPackages()
     this.getBookedDates()
+
+    let user = JSON.parse(sessionStorage.getItem('user'))
+    this.setState({userId: user.id})
   }
 
   getPackages() {
@@ -74,6 +78,7 @@ class Contact extends React.Component {
     e.preventDefault();
 
     const inquiry = {
+      userId: this.state.userId,
       name: this.nameRef.current.value,
       partner: this.partnerRef.current.value,
       mobile: this.mobileRef.current.value,
