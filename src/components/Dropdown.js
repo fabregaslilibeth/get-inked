@@ -8,9 +8,12 @@ class Dropdown extends React.Component {
   }
 
   componentDidMount() {
-    let name = JSON.parse(sessionStorage.getItem('user')).name
-    let Name = name.charAt(0).toUpperCase() + name.slice(1)
-    this.setState({name: Name})
+    let user = JSON.parse(sessionStorage.getItem('user')) || ''
+    if (user) {
+      let name = user.name
+      let Name = name.charAt(0).toUpperCase() + name.slice(1)
+      this.setState({name: Name})
+    }
   }
 
   logout = (e) => {

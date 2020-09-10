@@ -26,4 +26,15 @@ router.post('/', (req, res) => {
     .catch(err => res.status(400).json('Error: ' + err))
 })
 
+router.put('/update/:id' ,(req, res) => {
+  Review.findById(req.params.id)
+    .then(review => {
+      review.is_displayed = !review.is_displayed
+      review.save()
+        .then(() => res.json(review.is_displayed))
+        .catch(err => res.status(400).json('Error: ' + err))
+    })
+    .catch(err => res.status(400).json('Error: ' + err))
+})
+
 module.exports = router

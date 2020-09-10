@@ -33,7 +33,7 @@ class Contact extends React.Component {
     this.getPackages()
     this.getBookedDates()
 
-    let user = JSON.parse(sessionStorage.getItem('user'))
+    let user = JSON.parse(sessionStorage.getItem('user')) || ''
     this.setState({userId: user.id})
   }
 
