@@ -24,7 +24,7 @@ class Login extends React.Component {
           this.setState({result: data.message})
         } else {
           sessionStorage.setItem('token', data.token)
-          sessionStorage.setItem('isAdmin', data.user.isAdmin)
+          sessionStorage.setItem('user', JSON.stringify(data.user))
           window.location.href = '/'
 
           //this.props.getToken(data.token, data.user.isAdmin)

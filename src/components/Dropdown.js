@@ -3,10 +3,23 @@ import {Link} from "react-router-dom"
 
 class Dropdown extends React.Component {
 
+  state = {
+    name: ''
+  }
+
+  componentDidMount() {
+    let user = JSON.parse(sessionStorage.getItem('user')) || ''
+    if (user) {
+      let name = user.name
+      let Name = name.charAt(0).toUpperCase() + name.slice(1)
+      this.setState({name: Name})
+    }
+  }
+
   logout = (e) => {
     e.preventDefault()
     sessionStorage.removeItem('token')
-    sessionStorage.removeItem('isAdmin')
+    sessionStorage.removeItem('user')
     window.location.href = '/'
   }
 
@@ -28,7 +41,7 @@ class Dropdown extends React.Component {
         </li>
       )
     }
-    if (sessionStorage.getItem('token') && sessionStorage.getItem('isAdmin') === 'false') {
+    if (sessionStorage.getItem('token') && ((JSON.parse(sessionStorage.getItem('user')).isAdmin) === false )) {
       return (
         <li className="nav-item dropdown">
 
@@ -36,7 +49,7 @@ class Dropdown extends React.Component {
              data-toggle="dropdown"
              aria-haspopup="true" aria-expanded="false">
 
-            <span className="caret"></span> User
+            <span className="caret"></span> {this.state.name}
           </a>
 
           <div className="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
@@ -54,7 +67,7 @@ class Dropdown extends React.Component {
              data-toggle="dropdown"
              aria-haspopup="true" aria-expanded="false">
 
-            <span className="caret"></span> Admin
+            <span className="caret"></span> {this.state.name}
           </a>
 
           <div className="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">

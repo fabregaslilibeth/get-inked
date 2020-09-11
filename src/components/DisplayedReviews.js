@@ -1,8 +1,8 @@
 import React from "react";
 import axios from "axios";
-import Review from "./Review";
+import DisplayedReview from "./DisplayedReview";
 
-class Reviews extends React.Component {
+class DisplayedReviews extends React.Component {
 
   state = {
     reviews: []
@@ -14,7 +14,9 @@ class Reviews extends React.Component {
     axios.get('http://localhost:5000/reviews/')
       .then(({data}) => {
         data.forEach(review => {
-          reviews.push(review)
+          if (review.is_displayed === true) {
+            reviews.push(review)
+          }
         })
 
         this.setState({reviews})
@@ -27,7 +29,7 @@ class Reviews extends React.Component {
         <div className="container">
           <div className="row mx-auto d-flex justify-content-center">
             {Object.keys(this.state.reviews).map(
-              key => <Review
+              key => <DisplayedReview
                 key={key}
                 index={key}
                 review={this.state.reviews[key]}
@@ -41,4 +43,4 @@ class Reviews extends React.Component {
 }
 
 
-export default Reviews
+export default DisplayedReviews

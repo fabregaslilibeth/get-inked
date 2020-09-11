@@ -8,6 +8,7 @@ router.route('/').get((req, res) => {
 })
 
 router.route('/add').post((req, res) => {
+  const userId = req.body.userId
   const name = req.body.name
   const partner = req.body.partner
   const preferred_package = req.body.preferred_package
@@ -16,6 +17,7 @@ router.route('/add').post((req, res) => {
   const message = req.body.message
 
   const newContact = new Contact({
+    userId,
     name,
     partner,
     preferred_package,
@@ -30,6 +32,12 @@ router.route('/add').post((req, res) => {
 })
 
 router.route('/:id').get((req, res) => {
+  Contact.findById(req.params.id)
+    .then(contact => res.json(contact))
+    .catch(err => res.status(400).json('Error: ' + err))
+})
+
+router.route('/user/:id').get((req, res) => {
   Contact.findById(req.params.id)
     .then(contact => res.json(contact))
     .catch(err => res.status(400).json('Error: ' + err))

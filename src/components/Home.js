@@ -1,6 +1,7 @@
 import React from "react"
 import Packages from "./Packages";
 import Contact from "./Contact";
+import DisplayedReviews from "./DisplayedReviews";
 
 class Home extends React.Component {
   render () {
@@ -42,36 +43,8 @@ class Home extends React.Component {
             {/*// <!-- START CAROUSEL HERE -->*/}
             <div className="testi-wrapper mx-auto">
 
+              <DisplayedReviews />
 
-              <div id="carouselExampleControls" className="carousel slide" data-ride="carousel">
-                <div className="carousel-inner" id="reviews">
-
-                  <div className="carousel-item active">
-                    <div className="testi-text-container">
-                      <h3 className="text-center">Beyond Grateful</h3>
-                      <p className="text-center">" I am a mother of two, but I don't want to be 'JUST A MOTHER'. So I
-                        enrolled in Cupcake Cinema Photography Class and I can completely say it has changed my life
-                        forever."</p>
-                      <p className="text-right px-4">photoG@graphics.com</p>
-                      <p className="text-right px-4">June 15th 2019, 6:10:15 pm</p>
-
-                    </div>
-                  </div>
-
-                  {/*<a className="carousel-control-prev" href="#carouselExampleControls" role="button"*/}
-                  {/*   data-slide="prev">*/}
-                  {/*  <span className="carousel-control-prev-icon" aria-hidden="true"></span>*/}
-                  {/*  <span className="sr-only">Previous</span>*/}
-                  {/*</a>*/}
-                  {/*<a className="carousel-control-next" href="#carouselExampleControls" role="button"*/}
-                  {/*   data-slide="next">*/}
-                  {/*  <span className="carousel-control-next-icon" aria-hidden="true"></span>*/}
-                  {/*  <span className="sr-only">Next</span>*/}
-                  {/*</a>*/}
-
-                </div>
-              </div>
-              {/*// <!-- END CAROUSEL HERE -->*/}
             </div>
           </div>
         </div>
