@@ -2,110 +2,105 @@ import React from "react"
 import Packages from "./Packages";
 import Contact from "./Contact";
 import DisplayedReviews from "./DisplayedReviews";
+import GallerySlider from "./GallerySlider";
+import Footer from "./Footer";
 
 class Home extends React.Component {
-  render () {
+  render() {
     return (
-      <div className="mx-auto">
-        <div className="row">
-          <div className="col-lg-12" id="home">
-          </div>
+      <div>
+        <div className="d-flex align-items-center justify-content-center flex-column flex-nowrap banner-content">
+          <button className="buttons">make an appointment</button>
         </div>
-        <div className="row" id="about">
-          <div className="col-lg-8 mx-auto py-4">
-            <div className="about-wrapper ">
-              <div className="row">
-                <div className="about-text-container col-lg-6 col-md-12 col-sm-12">
-                  <div className="headers">
-                    <h4 className="custom-header">So this is us..</h4>
-                    <h1>about</h1>
-                  </div>
-                  <p className="about-text">They say that anyone can pick up a camera and start taking beautiful
-                    photographs, as long as the camera that they use is of utmost quality type. I tend to disagree.
-                    While there are natural born gifted photographers, many have to go through countless years of
-                    learning and hardship to achieve a remarkable standard in photography.</p>
-                </div>
 
-                <div className="about-image-container col-lg-6 mx-auto">
-                  <div className="about-image mx-auto">
-                  </div>
-                </div>
-              </div>
+        <div className="container-fluid project-container" id="packages">
+
+          <div className="services-container container-fluid p-0">
+
+            <Packages />
+
+          </div>
+
+          <div className="gallery-container container-fluid" id="gallery">
+            <div className="row m-4">
+
+              <GallerySlider/>
 
             </div>
           </div>
-        </div>
-        {/*// <!-- end of about row -->*/}
 
-        <div className="row" id="testimonials">
-          <h1 className="text-center mx-auto custom-header my-4">What our clients say about us</h1>
-          <div className="col-lg-12" id="testimonials">
-            {/*// <!-- START CAROUSEL HERE -->*/}
-            <div className="testi-wrapper mx-auto">
+          {/*<div className="about-us-container">*/}
+          {/*  <div className="row bg-app">*/}
+
+          {/*    <div className="col-12 col-md-6 my-4 p-4">*/}
+          {/*      <div className="col-10 col-md-6 mx-auto">*/}
+          {/*        <h2 className="headers font-weight-bolder text-uppercase">Service <span*/}
+          {/*          className="text-span-color">beyond </span>expectation</h2>*/}
+
+          {/*        <hr className="bg-white my-4 ml-0 w-25"/>*/}
+
+          {/*        <p className="my-4 pt-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi atque commodi*/}
+          {/*          delectus dolore dolorem doloremque iure reiciendis.</p>*/}
+
+          {/*        <button className="buttons my-4">read more</button>*/}
+
+          {/*      </div>*/}
+          {/*    </div>*/}
+
+          {/*    <div className="col-12 col-md-6 about-container">*/}
+          {/*      <div className="col-12 col-md-8 mx-auto">*/}
+
+          {/*      </div>*/}
+          {/*    </div>*/}
+
+          {/*  </div>*/}
+          {/*</div>*/}
+
+          <div className="testimonials-container container-fluid p-0" id="reviews">
 
               <DisplayedReviews />
 
+          </div>
+
+          <div className="contact-us-container" id="contact">
+            <div className="row bg-app">
+              <div className="col-12 col-md-6 my-4 p-4">
+                <div className="col-10 mx-auto">
+                  <h2 className="headers font-weight-bolder text-uppercase text-center">Make an <span
+                    className="text-span-color">appointment </span></h2>
+
+                    <Contact  />
+
+                </div>
+              </div>
+
+              <div className="col-12 col-md-6 map-container">
+                <div className="col-12 col-md-8 mx-auto">
+                  <div className="d-flex align-items-center flex-wrap p-4 m-4 ">
+                    <div className="h6 text-uppercase col-12 font-weight-bolder spacer">
+                      <i className="icons-color fa fa-map-pin mr-2" aria-hidden="true"></i>Location
+                      <p className="my-4 ml-4">128 Winston st, Upper West Side, </p>
+                      <p className="my-4 ml-4">Manhattan,New York, NY 05120</p>
+                    </div>
+                    <div className="h6 text-uppercase col-12 font-weight-bolder my-4">
+                      <i className="icons-color fa fa-phone mr-2" aria-hidden="true"></i>+639 412 1234
+                    </div>
+                    <div className="h6 text-uppercase col-12 font-weight-bolder my-4">
+                      <i className="icons-color fa fa-hourglass mr-2" aria-hidden="true"></i>Monday -- Sunday 9am - 5pm
+                    </div>
+                  </div>
+                </div>
+
+              </div>
             </div>
           </div>
-        </div>
-        {/*// <!-- end testi row -->*/}
 
-        <hr/>
-
-       <Packages />
-
-        <hr/>
-       <Contact />
-
-        <div className="row" id="footer">
-          <div className="col-lg-10 mx-auto">
-            <div className="row">
-              <div className="col-lg-3">
-                <div className="footer-wrapper">
-                  <p>Cupcake Cinema</p>
-                  <p>Same experience as a cake, only more affordable. </p>
-                </div>
-              </div>
-
-              <div className="col-lg-3">
-                <div className="footer-links">
-                  <ul className="navbar-nav">
-                    <li className="nav-item"><a className="nav-link nav-link-footer" href="#home">Home</a></li>
-                    <li className="nav-item"><a className="nav-link nav-link-footer" href="/blogsUser">Blogs</a></li>
-                    <li className="nav-item"><a className="nav-link nav-link-footer" href="#testimonials">Client
-                      Reviews</a></li>
-                    <li className="nav-item"><a className="nav-link nav-link-footer" href="#investment">Packages</a>
-                    </li>
-                    <li className="nav-item"><a className="nav-link nav-link-footer" href="#contact">Contact</a></li>
-                  </ul>
-                </div>
-              </div>
-
-              <div className="col-lg-3">
-                <div className="footer-contact">
-                  <p>24 Block D. Taft Avenue, Manila</p>
-                  <p>info@cupcakecinema.com</p>
-                  <p>857-2140</p>
-                </div>
-              </div>
-              <div className="col-lg-3 text-center">
-                <div className="footer-newsletter">
-                  Be updated with our promos and upcoming events.
-                  <form action="">
-                    <input className="form-control  my-2    " type="email" placeholder="Your Email Address"
-                           required=""/>
-                    <button className="btn btn-block btn-secondary">Subscribe now</button>
-                  </form>
-                </div>
-              </div>
-
-            </div>
+          <div className="footer container-fluid p-0">
+             <Footer />
           </div>
+
         </div>
 
-        <div className="copyright col-lg-12">
-          <p className="text-center h4">CUPCAKE CINEMA || &copy; 2015</p>
-        </div>
       </div>
     )
   }

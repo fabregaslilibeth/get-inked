@@ -7,19 +7,21 @@ router.route('/').get((req, res) => {
     .catch(err => res.status(400).json('Error: ' + err))
 })
 
-router.route('/add').post((req, res) => {
-  const userId = req.body.userId
-  const name = req.body.name
-  const partner = req.body.partner
-  const preferred_package = req.body.preferred_package
-  const date = req.body.date
-  const mobile = req.body.mobile
-  const message = req.body.message
+router.post('/add', (req, res) => {
+  const {userId, name, preferred_package, date, mobile, message} = req.body;
+
+  //simple validation
+  if (!userId ) {
+    return res.json({status: 404, message: 'Please make sure to login first.'})
+  }
+
+  if (!name || !preferred_package || !date || !mobile || !message) {
+    return res.json({status: 404, message: 'All fields are required.'})
+  }
 
   const newContact = new Contact({
     userId,
     name,
-    partner,
     preferred_package,
     date,
     mobile,

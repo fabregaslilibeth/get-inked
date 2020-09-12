@@ -1,29 +1,16 @@
 import React from "react"
 import '../index.css';
-import {Link} from "react-router-dom"
-import Login from "./Login";
-import Register from "./Register";
-import Dropdown from "./Dropdown";
+import {Link} from "react-router-dom";
 
-class Navbar extends React.Component {
-
-  state = {
-    token: '',
-    isAdmin: false
-  }
-
-    //not needed anymore since I already used session storage
-  // setToken = (token, isAdmin) => {
-  //   this.setState({
-  //     token,
-  //     isAdmin
-  //   })
-  // }
+class Footer extends React.Component {
 
   render() {
 
     return (
       <div>
+        <Link to="/" className="nav-link text-white">
+          <h3 className="logo  text-center font-weight-bolder">GET INKED</h3>
+        </Link>
         <nav className="navbar nav navbar-expand-lg sticky-top mx-auto" id="navBar">
 
           <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
@@ -36,30 +23,27 @@ class Navbar extends React.Component {
                 <a href="/" className="nav-link text-uppercase text-white">Home</a>
               </li>
               <li className="nav-item ">
-                <a href="/#gallery" className="nav-link text-uppercase text-white">GALLERY</a>
+                <a href="/blogsUser" className="nav-link text-uppercase text-white">GALLERY</a>
               </li>
               <li className="nav-item ">
-                <a href="/#reviews" className="nav-link text-uppercase text-white">Reviews</a>
+                <a href="/#testimonials" className="nav-link text-uppercase text-white">Reviews</a>
               </li>
               <li className="nav-item ">
-                <a href="/#packages" className="nav-link text-uppercase text-white">Packages</a>
+                <a href="/#investment" className="nav-link text-uppercase text-white">Packages</a>
               </li>
 
               <li className="nav-item ">
                 <a href="/#contact" className="nav-link text-uppercase text-white">Contact</a>
               </li>
 
-              <Dropdown token={this.state.token} isAdmin={this.state.isAdmin}/>
-
             </ul>
           </div>
 
         </nav>
-        <Login />
-        <Register />
+        <p className="text-white text-center">All photos are not mine. For educational purposes only.</p>
       </div>
     )
   }
 }
 
-export default Navbar;
+export default Footer;
