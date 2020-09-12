@@ -72,10 +72,13 @@ class MyReviews extends React.Component {
     return (
       <div>
         {}
-        <div className="container">
+        <div className="container p-0" style={{minHeight: "80vh"}}>
           <div className="row">
             <div className={this.state.canAddReview ? "d-none" : "col-8 mx-auto text-center"}>
-              <p>You cannot add a review yet. Please wait for the session to be finished. Thank you.</p>
+              <p className="spacer">  <i className="fas fa-exclamation-circle mr-2 text-danger"></i> You cannot add a review unless you have finished a session. </p>
+              <p>Thank you.</p>
+              <br/>
+              <p><a href="/my-bookings" className="buttons text-uppercase">View Bookings</a></p>
             </div>
 
             <div className={this.state.canAddReview && !this.state.hasAddedReview ? "col-8 mx-auto text-center" : "d-none"}>
@@ -92,12 +95,13 @@ class MyReviews extends React.Component {
 
               <div className="form-group">
                 <label htmlFor="message">Message</label>
-                <textarea ref={this.messageRef} id="message" cols="30" rows="10" className="form-control"></textarea>
+                <textarea ref={this.messageRef} id="message" cols="30" rows="10" className="form-control" placeholder="Please tell us what you think of our service."></textarea>
               </div>
-              <button type="submit" className="btn btn-outline-dark" onClick={this.addReview}>Add Review</button>
+              <button type="submit" className="buttons" onClick={this.addReview}>Add Review</button>
             </div>
-            <div className={this.state.hasAddedReview ? "col-8 mx-auto text-center" : "d-none"}>
-              {this.state.title} {this.state.message}
+            <div className={this.state.hasAddedReview ? "text-white col-7 mx-auto bg-gray m-2 booking-card" : "d-none"}>
+              <h1 className="p-4 text-uppercase"> {this.state.title} </h1>
+              <p className="p-4"> {this.state.message}</p>
             </div>
           </div>
         </div>

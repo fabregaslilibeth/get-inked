@@ -3,6 +3,7 @@ import '../index.css';
 import axios from "axios";
 
 class Login extends React.Component {
+
   emailRef = React.createRef()
   passwordRef = React.createRef()
 
@@ -22,12 +23,14 @@ class Login extends React.Component {
       .then(({data}) => {
         if (data.status === 404) {
           this.setState({result: data.message})
+          setTimeout(() => {
+            this.setState({result: ''})
+          }, 5000);
         } else {
           sessionStorage.setItem('token', data.token)
           sessionStorage.setItem('user', JSON.stringify(data.user))
           window.location.href = '/'
 
-          //this.props.getToken(data.token, data.user.isAdmin)
           this.clearFields()
         }
       }).catch(({data}) =>
@@ -48,19 +51,17 @@ class Login extends React.Component {
       <div className="modal fade" id="loginModal" role="dialog" aria-labelledby="exampleModalLabel"
            aria-hidden="true">
         <div className="modal-dialog modal-dialog-centered" role="document">
-          <div className="modal-content">
+          <div className="modal-content bg-app">
             <div className="modal-header">
-              <h5 className="modal-title" id="exampleModalLabel">Login</h5>
-              <button type="button" className="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-              </button>
+              <h5 className="modal-title headers mx-auto text-uppercase" id="exampleModalLabel">Login</h5>
+             <p className="text-white"><a href="" className="nav-link text-white" data-dismiss="modal" aria-label="Close"><i className="fas fa-times"></i></a></p>
             </div>
             <form className="col-12 mx-auto" onSubmit={this.login}>
             <div className="modal-body">
               <div className="container my-4">
                 <div className="text-center">
-                    <span className={!this.state.result ? 'd-none' : 'alert alert-success p-4 flash'}>
-                    {this.state.result}
+                    <span className={!this.state.result ? 'd-none' : 'alert alert-custom'}>
+                    <i className="fas fa-exclamation-circle mr-2 text-danger"></i><small>{this.state.result}</small>
                    </span>
                 </div>
 
@@ -80,8 +81,7 @@ class Login extends React.Component {
               </div>
             </div>
               <div className="modal-footer">
-                <button type="button" className="btn btn-secondary" data-dismiss="modal">Close</button>
-                <button type="submit" className="btn btn-primary">Submit</button>
+                <button type="submit" className="buttons">Submit</button>
               </div>
             </form>
           </div>

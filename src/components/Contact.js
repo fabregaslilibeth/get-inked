@@ -25,6 +25,7 @@ class Contact extends React.Component {
     result: '',
     excludedDates: [],
     startDate: new Date(),
+    status: '',
   }
 
   componentDidMount() {
@@ -92,23 +93,28 @@ class Contact extends React.Component {
       .then(({data}) => {
         if (data.status === 404) {
           this.setState({result: data.message})
+          this.setState({status: 'error'})
         } else {
           this.setState({
-            result: 'Thank you for your inquiry. We\'ll get in touch soon!',
+            status: '',
+            result: 'Thank you for booking with us! See you on your schedule.',
             excludedDates: excludedDates,
           })
 
-          this.clearFields()
-
-          setTimeout(() => {
-            this.setState({result: ''})
-          }, 2000);
+          this.messageRef.current.value = '';
+          this.nameRef.current.value = '';
+          this.preferred_packageRef.current.value = '';
+          this.mobileRef.current.value = '';
         }
 
       }).catch(err => console.log(err))
+
+    setTimeout(() => {
+      this.setState({result: ''})
+    }, 5000);
   }
 
-  clearFields() {
+  clearFields = () => {
     this.nameRef.current.value = ''
     this.preferred_packageRef.current.value = ''
     this.mobileRef.current.value = ''
@@ -123,12 +129,12 @@ class Contact extends React.Component {
 
             <div className="form-wrapper p-4 col-lg-12">
               <div className="text-center">
-                <span className={!this.state.result ? 'd-none' : 'alert alert-success p-4 flash'}>
-                {this.state.result}
-               </span>
+                <span className={!this.state.result ? 'd-none' : 'alert alert-custom'}>
+                  <i className={this.state.status === "error" ? 'fas fa-exclamation-circle mr-2 text-danger' : 'fas fa-check-circle mr-2 text-success' }></i>
+                  <small>{this.state.result}</small>
+                </span>
               </div>
               <form id="createContact" onSubmit={this.onSubmit}>
-
                 <div className="form-row">
                   <div className="form-group col-12 col-md-6">
                     <label htmlFor="name1">Name: </label>
@@ -163,7 +169,8 @@ class Contact extends React.Component {
                       onChange={this.handleChange}
                       excludeDates={this.state.excludedDates}
                     />
-                    <small id="emailHelp" className="form-text text-muted">Note: Grayed out dates are unavailable.</small>
+                    <small id="emailHelp" className="form-text text-muted">Note: Grayed out dates are
+                      unavailable.</small>
                   </div>
 
                   <div className="form-group  col-12 col-md-6">

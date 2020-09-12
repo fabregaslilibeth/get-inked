@@ -45,16 +45,18 @@ class Availabilities extends React.Component {
       timeout: {enter: 250, exit: 250}
     }
     return (
-      <div className="container my-4">
+      <div className="container my-4" style={{minHeight: "80vh"}}>
         <div className="row">
           <div className="col-12 col-md-7 calendar-container">
             <Calendar bookings={this.state.bookings} getClickedEvent={this.getClickedEvent}/>
           </div>
-          <div className={this.state.clickedEvent.length < 1 ?  "d-none" : "col-12 col-md-3 my-4 ml-auto text-center clicked-event" }>
-            <h3 className="clicked-event-header py-4">{this.state.clickedEvent.name} && {this.state.clickedEvent.partner} </h3>
-            <p>{this.state.clickedEvent.preferred_package}</p>
-            <p>{this.state.clickedEvent.mobile}</p>
-            <p>{this.state.clickedEvent.message}</p>
+          <div className={this.state.clickedEvent.length < 1 ?  "d-none" : "col-12 col-md-4 my-4 ml-auto clicked-event" }>
+            <h3 className="text-uppercase font-weight-bolder py-4">{this.state.clickedEvent.name}</h3>
+         <div className="p-4">
+           <p><small><strong className="text-span-color">SERVICE:  </strong> </small>{this.state.clickedEvent.preferred_package}</p>
+           <p><small><strong className="text-span-color">NOTES: </strong> </small>{this.state.clickedEvent.message}</p>
+           <p><small><strong className="text-span-color">MOBILE: </strong> </small>{this.state.clickedEvent.mobile}</p>
+         </div>
           </div>
         </div>
       </div>

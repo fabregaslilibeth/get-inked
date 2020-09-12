@@ -72,7 +72,7 @@ class Home extends React.Component {
 
           <div className="contact-us-container" id="contact">
             <div className="row bg-app">
-              <div className="col-12 col-md-6 my-4 p-4">
+              <div className="col-12 col-lg-6 my-4 p-4">
                 <div className="col-12 col-md-10 mx-auto">
                   <h2 className="headers font-weight-bolder text-uppercase text-center"><span
                     className="text-span-color">book </span>now</h2>
@@ -82,7 +82,7 @@ class Home extends React.Component {
                 </div>
               </div>
 
-              <div className="col-12 col-md-6 map-container">
+              <div className="col-12 col-lg-6 map-container">
                 <div className="col-12 col-md-8 mx-auto">
                   <div className="d-flex align-items-center flex-wrap p-4 m-4 ">
                     <div className="h6 text-uppercase col-12 font-weight-bolder spacer">
