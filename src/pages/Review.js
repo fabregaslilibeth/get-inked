@@ -24,11 +24,13 @@ class Review extends React.Component {
       <div>
         <div className="container">
           <div className="row mx-auto d-flex justify-content-center">
-          <div className="col-12">
-            <p>{this.props.review.title}</p>
+          <div className="col-12 my-4">
+            <h5 className="font-weight-bolder text-span-color">{this.props.review.title}</h5>
             <p>{this.props.review.message}</p>
-            <label htmlFor="is_displayed">Display?</label>
-            <input type="checkbox" id="is_displayed" checked={this.state.checked ? "checked" : ''} onChange={this.toggleDisplay}/>
+            <label htmlFor="is_displayed" className="font-weight-bolder ml-auto">{this.state.checked ? "Displayed" : 'Not displayed'}  </label>
+            <input type="checkbox" id="is_displayed" checked={this.state.checked ? "checked" : ''} className="ml-4 form-check-inline" onChange={this.toggleDisplay}/>
+
+
           </div>
           </div>
         </div>

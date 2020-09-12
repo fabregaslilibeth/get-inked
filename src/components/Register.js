@@ -27,7 +27,7 @@ class Register extends React.Component {
           this.setState({result: data.message})
         } else {
           sessionStorage.setItem('token', data.token)
-          sessionStorage.setItem('isAdmin', data.user.isAdmin)
+          sessionStorage.setItem('user', JSON.stringify(data.user))
           window.location.href = '/'
 
           //this.props.getToken(data.token, data.user.isAdmin)
@@ -54,18 +54,16 @@ class Register extends React.Component {
         <div className="modal-dialog modal-dialog-centered" role="document">
           <div className="modal-content">
             <div className="modal-header">
-              <h5 className="modal-title" id="exampleModalLabel">Register</h5>
-              <button type="button" className="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-              </button>
+              <h5 className="modal-title headers mx-auto text-uppercase" id="exampleModalLabel">Register</h5>
+              <p className="text-white"><a href="" className="nav-link text-white" data-dismiss="modal" aria-label="Close"><i className="fas fa-times"></i></a></p>
             </div>
             <form className="col-12 mx-auto" onSubmit={this.register}>
               <div className="modal-body">
 
                 <div className="container my-4">
                   <div className="text-center">
-                    <span className={!this.state.result ? 'd-none' : 'alert alert-success p-4 flash'}>
-                    {this.state.result}
+                     <span className={!this.state.result ? 'd-none' : 'alert alert-custom'}>
+                    <i className="fas fa-exclamation-circle mr-2 text-danger"></i><small>{this.state.result}</small>
                    </span>
                   </div>
 
@@ -91,8 +89,7 @@ class Register extends React.Component {
                 </div>
               </div>
               <div className="modal-footer">
-                <button type="button" className="btn btn-secondary" data-dismiss="modal">Close</button>
-                <button type="submit" className="btn btn-primary">Submit</button>
+                <button type="submit" className="buttons">Submit</button>
               </div>
             </form>
           </div>

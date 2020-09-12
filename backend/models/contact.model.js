@@ -11,10 +11,6 @@ const contactSchema = new Schema({
     type: String,
     required: true,
   },
-  partner: {
-    type: String,
-    required: true,
-  },
   date: {
     type: Date,
     required: true,
