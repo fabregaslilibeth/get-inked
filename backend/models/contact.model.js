@@ -3,11 +3,11 @@ const mongoose = require('mongoose')
 const Schema = mongoose.Schema
 
 const contactSchema = new Schema({
-  name: {
+  userId: {
     type: String,
     required: true,
   },
-  partner: {
+  name: {
     type: String,
     required: true,
   },
