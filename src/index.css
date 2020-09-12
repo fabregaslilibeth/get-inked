@@ -50,6 +50,18 @@ html {
     transition: 500ms;
 }
 
+.buttons-sm {
+    padding: 5px;
+    border: 1px solid #e6a87a;
+    background: rgba(255, 255, 255, 0);
+    color: white;
+    text-transform: uppercase;
+    font-weight: bolder;
+    transition: 500ms;
+    width: 50%;
+    cursor: pointer;
+}
+
 .buttons:hover {
     border: 3px solid white;
     color: white;
@@ -105,8 +117,17 @@ html {
     text-align: center;
 }
 
+.package-description {
+    opacity: 0;
+    transition: 500ms;
+}
+
 .package-card:hover {
-    transform: scale(1.01);
+    cursor: pointer;
+}
+
+.package-card:hover + .package-description {
+    opacity: 1;
     transition: 500ms;
 }
 
@@ -133,7 +154,7 @@ html {
     background: linear-gradient(
             rgba(21, 21, 21, .95),
             rgba(21, 21, 21, 0.85)),
-    url("https://cdn.hipwallpaper.com/i/78/39/QF1SJy.jpg") center center no-repeat;
+    url("https://cdn.hipwallpaper.com/i/78/39/QF1SJy.jpg") center center no-repeat fixed;
     background-size: cover;
     min-height: 80vh;
 }

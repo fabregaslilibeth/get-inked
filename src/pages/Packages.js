@@ -1,6 +1,7 @@
 import React from "react";
 import axios from "axios";
-import Package from "../components/Package";
+import AddService from "../components/AddService";
+import Service from "./Service";
 
 class Packages extends React.Component {
 
@@ -17,13 +18,15 @@ class Packages extends React.Component {
 
   render() {
     return (
-      <div className="">
-        <div className="row my-4" id="investment">
+      <div className="" style={{minHeight: "80vh"}}>
+        <div className="row my-4">
+         <div className="mx-auto my-4 py-4">
+           <a className="buttons"  href="#" data-toggle="modal" data-target="#addServiceModal">Add new service</a>
+         </div>
           <div className="col-lg-12">
-
               <div className="row mx-auto  justify-content-center">
                 {Object.keys(this.state.packages).map(
-                  key => <Package
+                  key => <Service
                     key={key}
                     index={key}
                     details={this.state.packages[key]}
@@ -31,8 +34,11 @@ class Packages extends React.Component {
                 )}
               </div>
 
+
+
           </div>
         </div>
+        <AddService />
       </div>
     )
   }
