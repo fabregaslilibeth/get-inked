@@ -7,33 +7,9 @@ const packageSchema = new Schema({
     type: String,
     required: true,
   },
-  album: {
+  description: {
     type: String,
-    required: true,
-  },
-  video: {
-    type: String,
-    required: true,
-  },
-  frame: {
-    type: String,
-    required: true,
-  },
-  prenuptial: {
-    type: String,
-    required: true,
-  },
-  photographers: {
-    type: Number,
-    required: true,
-  },
-  videographers: {
-    type: Number,
-    required: true,
-  },
-  lightsmen: {
-    type: Number,
-    required: true,
+    required: false,
   },
 }, {
   timestamps: true

@@ -23,6 +23,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../catch-of-the-day" />
     <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.path.for.package.tslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
@@ -30,16 +31,16 @@
     <property name="nodejs_package_manager_path" value="yarn" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="D:\laragon\www\one-flash\src\pages" />
-      <recent name="D:\laragon\www\mern-exercise-tracker\src\components" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\laragon\www\one-flash\src\pages" />
       <recent name="D:\laragon\www\one-flash\src\components" />
       <recent name="D:\laragon\www\one-flash\backend\routes" />
       <recent name="D:\laragon\www\one-flash\backend\models" />
       <recent name="D:\laragon\www\one-flash\backend" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\laragon\www\one-flash\src\pages" />
+      <recent name="D:\laragon\www\mern-exercise-tracker\src\components" />
     </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -71,7 +72,7 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="667" y="253" width="585" height="534" key="find.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1599390464234" />
-    <state x="616" y="240" key="run.anything.popup" timestamp="1599307451189">
+    <state x="616" y="240" key="run.anything.popup" timestamp="1599474780924">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="616" y="240" key="run.anything.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1599307451189" />

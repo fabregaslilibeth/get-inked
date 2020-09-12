@@ -4,6 +4,12 @@ const jwt = require('jsonwebtoken')
 
 let User = require('../models/user.model')
 
+router.get('/', (req, res) => {
+  User.find()
+    .then(user => res.json(user))
+    .catch(err => res.status(400).json('Error: ' + err))
+} )
+
 // @desc get all users
 // @access admin
 router.post('/', (req, res) => {
