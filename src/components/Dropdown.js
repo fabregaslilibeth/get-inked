@@ -34,9 +34,9 @@ class Dropdown extends React.Component {
             <span className="caret"></span> Guest
           </a>
 
-          <div className="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-            <a className="dropdown-item text-uppercase" href="#" data-toggle="modal" data-target="#loginModal">Login</a>
-            <a className="dropdown-item text-uppercase" href="#" data-toggle="modal" data-target="#registerModal">Register</a>
+          <div className="dropdown-menu bg-transparent dropdown-menu-right" aria-labelledby="navbarDropdown">
+            <a className="dropdown-item text-white text-uppercase" href="#" data-toggle="modal" data-target="#loginModal">Login</a>
+            <a className="dropdown-item text-white text-uppercase" href="#" data-toggle="modal" data-target="#registerModal">Register</a>
           </div>
         </li>
       )
@@ -52,10 +52,10 @@ class Dropdown extends React.Component {
             <span className="caret"></span> {this.state.name}
           </a>
 
-          <div className="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-            <Link to="/my-bookings" className="dropdown-item text-uppercase">My Bookings</Link>
-            <Link to="/my-reviews" className="dropdown-item text-uppercase">My Reviews</Link>
-            <a className="dropdown-item text-uppercase" href="#" onClick={this.logout}>Logout</a>
+          <div className="dropdown-menu bg-transparent dropdown-menu-right" aria-labelledby="navbarDropdown">
+            <Link to="/my-bookings" className="dropdown-item text-white text-uppercase">My Bookings</Link>
+            <Link to="/my-reviews" className="dropdown-item text-white text-uppercase">My Reviews</Link>
+            <a className="dropdown-item text-white text-uppercase" href="#" onClick={this.logout}>Logout</a>
           </div>
         </li>
       )
@@ -70,12 +70,12 @@ class Dropdown extends React.Component {
             <span className="caret"></span> {this.state.name}
           </a>
 
-          <div className="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-            <Link to="/packages" className="dropdown-item text-uppercase">Packages</Link>
-            <Link to="/availabilities" className="dropdown-item text-uppercase">Availabilities</Link>
-            <Link to="/reviews" className="dropdown-item text-uppercase">Reviews</Link>
-            <Link to="/gallery" className="dropdown-item text-uppercase">Gallery</Link>
-            <a className="dropdown-item text-uppercase" href="#" onClick={this.logout}>Logout</a>
+          <div className="dropdown-menu bg-transparent dropdown-menu-right" aria-labelledby="navbarDropdown">
+            <Link to="/packages" className="dropdown-item text-white text-uppercase">Packages</Link>
+            <Link to="/availabilities" className="dropdown-item text-white text-uppercase">Availabilities</Link>
+            <Link to="/reviews" className="dropdown-item text-white text-uppercase">Reviews</Link>
+            <Link to="/gallery" className="dropdown-item text-white text-uppercase">Gallery</Link>
+            <a className="dropdown-item text-white text-uppercase" href="#" onClick={this.logout}>Logout</a>
           </div>
         </li>
       )

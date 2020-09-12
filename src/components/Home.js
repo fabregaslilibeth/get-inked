@@ -10,12 +10,17 @@ class Home extends React.Component {
     return (
       <div>
         <div className="d-flex align-items-center justify-content-center flex-column flex-nowrap banner-content">
-          <button className="buttons">make an appointment</button>
+          <div className="col-md-8 mx-auto text-center spacer">
+            <h1 className="display-3 d-none d-lg-block text-uppercase font-weight-bolder app-color">Exceeding expectations</h1>
+            <h1 className="h3 d-block d-lg-none text-uppercase font-weight-bolder app-color">Exceeding expectations</h1>
+            <p>— since 1987 —</p>
+          </div>
+          <button className="buttons m-4">make an appointment</button>
         </div>
 
-        <div className="container-fluid project-container" id="packages">
+        <div className="container-fluid project-container">
 
-          <div className="services-container container-fluid p-0">
+          <div className="services-container container-fluid p-0" id="packages">
 
             <Packages />
 
@@ -66,8 +71,8 @@ class Home extends React.Component {
             <div className="row bg-app">
               <div className="col-12 col-md-6 my-4 p-4">
                 <div className="col-10 mx-auto">
-                  <h2 className="headers font-weight-bolder text-uppercase text-center">Make an <span
-                    className="text-span-color">appointment </span></h2>
+                  <h2 className="headers font-weight-bolder text-uppercase text-center"><span
+                    className="text-span-color">book </span>now</h2>
 
                     <Contact  />
 
