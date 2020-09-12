@@ -21,7 +21,6 @@ html {
     text-shadow: 2px 1px black;
 }
 
-
 .headers span {
     text-shadow: 1px 1px black;
 }
@@ -55,6 +54,8 @@ html {
     border: 3px solid white;
     color: white;
     transition: 500ms;
+    text-decoration: none;
+    cursor: pointer;
 }
 
 .app-color, .text-span-color, .icons-color {
@@ -109,22 +110,26 @@ html {
     transition: 500ms;
 }
 
-/*.gallery-item {*/
-/*    width: 600px;*/
-/*    height: 700px;*/
-/*}*/
+.gallery-item {
+    width: 600px;
+    height: 700px;
+}
 
-/*@media (max-width: 767px) {*/
-/*    .gallery-item {*/
-/*        width: 320px;*/
-/*        height: 500px;*/
-/*    }*/
-/*}*/
+@media (max-width: 575px) {
+    .gallery-item {
+        width: 320px;
+        height: 500px;
+    }
+}
+
+@media (max-width: 425px) {
+    .gallery-item {
+        width: 320px;
+        height: 300px;
+    }
+}
 
 .testimonials-container {
-    /*background: linear-gradient(*/
-    /*        rgba(21, 21, 21, .85),*/
-    /*        rgba(21, 21, 21, 0.85));*/
     background: linear-gradient(
             rgba(21, 21, 21, .95),
             rgba(21, 21, 21, 0.85)),
@@ -135,7 +140,7 @@ html {
 
 .review-container {
     border-radius: 10px;
-    box-shadow: 0px 3px 5px rgba(255, 255, 255, 0.1);
+    box-shadow: 0px 3px 5px rgba(0, 0, 0, 1);
 }
 
 .map-container {
@@ -153,4 +158,15 @@ html {
     border: 2px solid #e6a87a !important;
 }
 
-/******END OF BOOTSTRAP OVERRIDES******/
+.dropdown-item:hover {
+    background: gray !important;
+}
+
+/******SLICK CAROUSEL OVERRIDES******/
+@media (max-width: 575px) {
+    .slick-slide {
+        margin: 0 -5px !important;
+    }
+}
+
+

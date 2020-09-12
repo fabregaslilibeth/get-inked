@@ -137,7 +137,7 @@ class Contact extends React.Component {
                   </div>
 
                   <div className="form-group col-12 col-md-6">
-                    <label htmlFor="package_id">Preferred Package </label>
+                    <label htmlFor="package_id">Preferred Package</label>
                     <select required name="package_id" id="package_id"
                             className="packageOptions form-control" ref={this.packageRef}>
                       <option value="">Please select a package</option>
@@ -155,6 +155,7 @@ class Contact extends React.Component {
                 <div className="form-row">
                   <div className="form-group col-12 col-md-6">
                     <label htmlFor="wedding_date">Preferred Date</label>
+                    <br/>
                     <DatePicker
                       className={'form-control col-12'}
                       minDate={this.state.startDate}

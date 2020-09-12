@@ -14,8 +14,11 @@ class Home extends React.Component {
             <h1 className="display-3 d-none d-lg-block text-uppercase font-weight-bolder app-color">Exceeding expectations</h1>
             <h1 className="h3 d-block d-lg-none text-uppercase font-weight-bolder app-color">Exceeding expectations</h1>
             <p>— since 1987 —</p>
+            <p  className="spacer">
+              <a className="buttons" href="#contact">make an appointment</a>
+            </p>
           </div>
-          <button className="buttons m-4">make an appointment</button>
+
         </div>
 
         <div className="container-fluid project-container">
@@ -26,7 +29,7 @@ class Home extends React.Component {
 
           </div>
 
-          <div className="gallery-container container-fluid" id="gallery">
+          <div className="gallery-container container-fluid m-0 p-0" id="gallery">
             <div className="row m-4">
 
               <GallerySlider/>
@@ -70,7 +73,7 @@ class Home extends React.Component {
           <div className="contact-us-container" id="contact">
             <div className="row bg-app">
               <div className="col-12 col-md-6 my-4 p-4">
-                <div className="col-10 mx-auto">
+                <div className="col-12 col-md-10 mx-auto">
                   <h2 className="headers font-weight-bolder text-uppercase text-center"><span
                     className="text-span-color">book </span>now</h2>
 

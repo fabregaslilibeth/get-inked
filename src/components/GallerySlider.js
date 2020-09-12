@@ -31,7 +31,7 @@ class GallerySlider extends React.Component {
           }
         },
         {
-          breakpoint: 600,
+          breakpoint: 768,
           settings: {
             slidesToShow: 1,
             slidesToScroll: 1,
@@ -41,7 +41,10 @@ class GallerySlider extends React.Component {
           breakpoint: 480,
           settings: {
             slidesToShow: 1,
-            slidesToScroll: 1
+            slidesToScroll: 1,
+            centerMode: true,
+            centerPadding: "20",
+            fade: true
           }
         }
       ]
@@ -49,57 +52,37 @@ class GallerySlider extends React.Component {
 
     return (
       <>
-        <div className="col-12 col-md-9">
+        <h2 className="headers font-weight-bolder text-uppercase text-center d-block d-lg-none">
+          See <span className="text-span-color">Our Works</span>
+        </h2>
+
+        <div className="col-12 col-lg-9">
           <Slider {...settings} ref={c => (this.slider = c)}>
 
-             <div className="col-12">
+             <div className="col-12 mx-1">
                <div className="gallery-item" style={{
-                 backgroundImage: "url('https://img.freepik.com/free-photo/sad-young-man-with-tattoo-his-body-standing-front-dry-leaves-against-grey-background_23-2148122109.jpg?size=626&ext=jpg')",
+                 background: "url('https://img.freepik.com/free-photo/sad-young-man-with-tattoo-his-body-standing-front-dry-leaves-against-grey-background_23-2148122109.jpg?size=626&ext=jpg') center center no-repeat",
                  backgroundSize: "cover",
-                 width: "600px",
-                 height: "700px",
                }}></div>
              </div>
-             <div className="col-12">
+             <div className="col-12 mx-1">
                <div className="gallery-item" style={{
-                 backgroundImage: "url('https://image.freepik.com/free-photo/tattooed-stylish-girl_102671-3777.jpg')",
+                 background: "url('https://image.freepik.com/free-photo/tattooed-stylish-girl_102671-3777.jpg') center center no-repeat",
                  backgroundSize: "cover",
-                 width: "600px",
-                 height: "700px",
                }}></div>
              </div>
-             <div className="col-12">
+             <div className="col-12 mx-1">
                <div className="gallery-item" style={{
-                 backgroundImage: "url('https://image.freepik.com/free-photo/tattooed-stylish-girl_102671-3777.jpg')",
+                 background: "url('https://cdn.pixabay.com/photo/2015/11/07/11/26/hands-1031131_960_720.jpg') center center no-repeat",
                  backgroundSize: "cover",
-                 width: "600px",
-                 height: "700px",
                }}></div>
              </div>
-
-             {/*<div>*/}
-             {/*  <div className="gallery-item" style={{*/}
-             {/*    backgroundImage: "url('https://img.freepik.com/free-photo/sad-young-man-with-tattoo-his-body-standing-front-dry-leaves-against-grey-background_23-2148122109.jpg?size=626&ext=jpg')",*/}
-             {/*    backgroundSize: "cover",*/}
-             {/*    width: "600px",*/}
-             {/*    height: "700px",*/}
-             {/*  }}></div>*/}
-             {/*</div>*/}
-             {/*<div>*/}
-             {/*  <div className="gallery-item" style={{*/}
-             {/*    backgroundImage: "url('https://image.freepik.com/free-photo/tattooed-stylish-girl_102671-3777.jpg')",*/}
-             {/*    backgroundSize: "cover",*/}
-             {/*    width: "600px",*/}
-             {/*    height: "700px",*/}
-             {/*  }}></div>*/}
-             {/*</div>*/}
-
 
           </Slider>
           </div>
 
-        <div className="col-1 d-flex flex-column">
-          <h2 className="headers font-weight-bolder text-uppercase text-white my-auto">
+        <div className="col-12 col-lg-1 d-flex flex-column">
+          <h2 className="headers font-weight-bolder text-uppercase text-white my-auto d-none d-lg-block">
             See <span className="text-span-color">Our Works</span>
           </h2>
           <div className="text-center pb-4">

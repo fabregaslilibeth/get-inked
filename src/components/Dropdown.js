@@ -48,7 +48,6 @@ class Dropdown extends React.Component {
           <a id="navbarDropdown" className="nav-link text-white text-uppercase dropdown-toggle" href="#" role="button"
              data-toggle="dropdown"
              aria-haspopup="true" aria-expanded="false">
-
             <span className="caret"></span> {this.state.name}
           </a>
 
