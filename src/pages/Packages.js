@@ -34,8 +34,6 @@ class Packages extends React.Component {
                 )}
               </div>
 
-
-
           </div>
         </div>
         <AddService />

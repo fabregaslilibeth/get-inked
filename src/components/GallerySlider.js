@@ -1,7 +1,9 @@
 import React from "react";
+import axios from "axios";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import GallerySlideItem from "./GallerySlideItem";
 
 class GallerySlider extends React.Component {
 
@@ -11,6 +13,26 @@ class GallerySlider extends React.Component {
   previous = () => {
     this.slider.slickPrev();
   }
+
+  state = {
+    gallery: []
+  }
+
+  componentDidMount() {
+    let gallery = []
+
+    axios.get('http://localhost:5000/gallery/')
+      .then(({data}) => {
+        data.forEach(image => {
+          if (image.is_displayed === true) {
+            gallery.push(image)
+          }
+        })
+
+        this.setState({gallery})
+      })
+  }
+
 
   render() {
     let settings = {
@@ -59,27 +81,16 @@ class GallerySlider extends React.Component {
         <div className="col-12 col-lg-9">
           <Slider {...settings} ref={c => (this.slider = c)}>
 
-             <div className="col-12 mx-1">
-               <div className="gallery-item" style={{
-                 background: "url('https://img.freepik.com/free-photo/sad-young-man-with-tattoo-his-body-standing-front-dry-leaves-against-grey-background_23-2148122109.jpg?size=626&ext=jpg') center center no-repeat",
-                 backgroundSize: "cover",
-               }}></div>
-             </div>
-             <div className="col-12 mx-1">
-               <div className="gallery-item" style={{
-                 background: "url('https://image.freepik.com/free-photo/tattooed-stylish-girl_102671-3777.jpg') center center no-repeat",
-                 backgroundSize: "cover",
-               }}></div>
-             </div>
-             <div className="col-12 mx-1">
-               <div className="gallery-item" style={{
-                 background: "url('https://cdn.pixabay.com/photo/2015/11/07/11/26/hands-1031131_960_720.jpg') center center no-repeat",
-                 backgroundSize: "cover",
-               }}></div>
-             </div>
+            {Object.keys(this.state.gallery).map(
+              key => <GallerySlideItem
+                key={key}
+                index={key}
+                image={this.state.gallery[key]}
+              />
+            )}
 
           </Slider>
-          </div>
+        </div>
 
         <div className="col-12 col-lg-1 d-flex flex-column">
           <h2 className="headers font-weight-bolder text-uppercase text-white my-auto d-none d-lg-block">
