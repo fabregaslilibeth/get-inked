@@ -29,6 +29,7 @@ const registerRouter = require('./routes/register')
 const packagesRouter = require('./routes/packages')
 const contactRouter = require('./routes/contact')
 const reviewRouter = require('./routes/reviews')
+const galleryRouter = require('./routes/gallery')
 
 app.use('/exercises', exercisesRouter)
 app.use('/login', loginRouter)
@@ -37,6 +38,7 @@ app.use('/register', registerRouter)
 app.use('/packages', packagesRouter)
 app.use('/contact', contactRouter)
 app.use('/reviews', reviewRouter)
+app.use('/gallery', galleryRouter)
 
 app.listen(port, () => {
   console.log(`Server is running on port: ${port}`)

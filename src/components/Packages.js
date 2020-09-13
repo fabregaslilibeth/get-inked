@@ -17,7 +17,7 @@ class Packages extends React.Component {
   render() {
     return (
       <>
-        <div className="row">
+        <div className="d-flex justify-content-center flex-wrap">
           {Object.keys(this.state.packages).map(
             key => <Package
               key={key}
