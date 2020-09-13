@@ -40,10 +40,6 @@ class Availabilities extends React.Component {
   }
 
   render() {
-    const transitionOptions = {
-      classNames: "order",
-      timeout: {enter: 250, exit: 250}
-    }
     return (
       <div className="container my-4" style={{minHeight: "80vh"}}>
         <div className="row">
@@ -63,6 +59,5 @@ class Availabilities extends React.Component {
     )
   }
 }
-
 
 export default Availabilities

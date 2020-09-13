@@ -1,4 +1,4 @@
-import React, {createRef} from "react";
+import React from "react";
 import axios from "axios";
 
 class MyReviews extends React.Component {

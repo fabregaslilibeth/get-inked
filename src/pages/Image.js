@@ -1,6 +1,5 @@
 import React from "react";
 import axios from "axios"
-import EditService from "../components/EditService";
 import EditImage from "../components/EditImage";
 
 class Image extends React.Component {

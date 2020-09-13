@@ -1,6 +1,4 @@
 import React from "react";
-import Slider from "react-slick";
-
 
 class GallerySlideItem extends React.Component {
 
