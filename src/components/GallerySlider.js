@@ -44,6 +44,7 @@ class GallerySlider extends React.Component {
       centerPadding: "0",
       slidesToShow: 2,
       arrows: false,
+      autoplay: true,
       responsive: [
         {
           breakpoint: 1024,

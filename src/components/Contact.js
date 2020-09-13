@@ -136,13 +136,13 @@ class Contact extends React.Component {
               </div>
               <form id="createContact" onSubmit={this.onSubmit}>
                 <div className="form-row">
-                  <div className="form-group col-12 col-md-6">
+                  <div className="form-group col-12 col-md-4">
                     <label htmlFor="name1">Name: </label>
                     <input required ref={this.nameRef} type="text" id="name1" className="form-control" name="name1"
                            placeholder="Client Name"/>
                   </div>
 
-                  <div className="form-group col-12 col-md-6">
+                  <div className="form-group col-12 col-md-5 ml-auto">
                     <label htmlFor="package_id">Preferred Package</label>
                     <select required name="package_id" id="package_id"
                             className="packageOptions form-control" ref={this.packageRef}>
@@ -173,7 +173,7 @@ class Contact extends React.Component {
                       unavailable.</small>
                   </div>
 
-                  <div className="form-group  col-12 col-md-6">
+                  <div className="form-group  col-12 col-md-5 ml-auto">
                     <label htmlFor="mobile">Mobile: </label>
                     <input required ref={this.mobileRef} type="number" id="mobile" className="form-control"
                            name="mobile"
