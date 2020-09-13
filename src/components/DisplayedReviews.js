@@ -68,7 +68,7 @@ class DisplayedReviews extends React.Component {
       <div className="row text-white spacer">
         <div className="col-11 col-md-8 col-lg-5 mx-auto">
           <h2 className="headers font-weight-bolder m-4 p-4 text-uppercase text-white text-center d-none d-lg-block">
-            See <span className="text-span-color">What our clients has to say</span>
+            See What our <span className="text-span-color"> clients has to say</span>
           </h2>
           <h5 className="headers font-weight-bolder text-uppercase text-white text-center d-block d-lg-none">
            <span className="text-span-color">Reviews</span>

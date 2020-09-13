@@ -11,12 +11,16 @@ class Home extends React.Component {
       <div>
         <div className="d-flex align-items-center justify-content-center flex-column flex-nowrap banner-content">
           <div className="col-md-8 mx-auto text-center spacer">
-            <h1 className="display-3 d-none d-lg-block text-uppercase font-weight-bolder app-color">Exceeding expectations</h1>
+            <h1 className="display-3 d-none d-lg-block text-uppercase font-weight-bolder app-color">Exceeding
+              expectations</h1>
             <h1 className="h3 d-block d-lg-none text-uppercase font-weight-bolder app-color">Exceeding expectations</h1>
             <p>— since 1987 —</p>
-            <p  className="spacer">
-              <a className="buttons" href="#contact">make an appointment</a>
-            </p>
+
+           <p className="spacer">
+             <a className="custom-button"  href="#contact">
+               <span className="nav-link text-white p-4">make an appointment</span>
+             </a>
+           </p>
           </div>
 
         </div>
@@ -25,7 +29,7 @@ class Home extends React.Component {
 
           <div className="services-container container-fluid p-0" id="packages">
 
-            <Packages />
+            <Packages/>
 
           </div>
 
@@ -66,7 +70,7 @@ class Home extends React.Component {
 
           <div className="testimonials-container container-fluid p-0" id="reviews">
 
-              <DisplayedReviews />
+            <DisplayedReviews/>
 
           </div>
 
@@ -74,10 +78,12 @@ class Home extends React.Component {
             <div className="row bg-app">
               <div className="col-12 col-lg-6 my-4 p-4">
                 <div className="col-12 col-md-10 mx-auto">
-                  <h2 className="headers font-weight-bolder text-uppercase text-center"><span
+                  <h2 className="headers font-weight-bolder text-uppercase text-center d-block d-lg-none"><span
                     className="text-span-color">book </span>now</h2>
+                  <h2 className="headers font-weight-bolder text-uppercase text-center d-none d-lg-block">Make an<span
+                    className="text-span-color"> appointment</span></h2>
 
-                    <Contact  />
+                  <Contact/>
 
                 </div>
               </div>
@@ -104,7 +110,7 @@ class Home extends React.Component {
           </div>
 
           <div className="footer container-fluid p-0">
-             <Footer />
+            <Footer/>
           </div>
 
         </div>

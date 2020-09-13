@@ -40,6 +40,11 @@ html {
     height: 300px;
 }
 
+:active, :hover, :focus {
+    outline: 0!important;
+    outline-offset: 0;
+}
+
 .buttons {
     padding: 20px 60px;
     border: 3px solid #e6a87a;
@@ -48,6 +53,59 @@ html {
     text-transform: uppercase;
     font-weight: bolder;
     transition: 500ms;
+}
+
+.custom-button {
+    position: relative;
+    display: inline-block;
+    width: auto; height: auto;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    margin: 0px 25px 15px;
+    min-width: 150px;
+}
+
+.custom-button span {
+    position: relative;
+    display: inline-block;
+    font-size: 14px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    top: 0; left: 0;
+    width: 100%;
+    padding: 15px 20px;
+    transition: 0.3s;
+}
+
+.custom-button::before,
+.custom-button::after {
+    width: 10%; height: 25%;
+    transition: 0.35s;
+    position: absolute;
+    content: "";
+}
+.custom-button::before {
+    top: 0; left: 0;
+    border-left: 1px solid white;
+    border-top: 1px solid white;
+    position: absolute;
+    content: "";
+}
+.custom-button::after {
+    bottom: 0; right: 0;
+    border-right: 1px solid white;
+    border-bottom: 1px solid white;
+    position: absolute;
+    content: "";
+}
+.custom-button:hover::before,
+.custom-button:hover::after {
+    width: 99%;
+    height: 98%;
+    position: absolute;
+    content: "";
 }
 
 .buttons-sm {
@@ -62,13 +120,13 @@ html {
     cursor: pointer;
 }
 
-.buttons:hover {
-    border: 3px solid white;
-    color: white;
-    transition: 500ms;
-    text-decoration: none;
-    cursor: pointer;
-}
+/*.buttons:hover {*/
+/*    border: 3px solid white;*/
+/*    color: white;*/
+/*    transition: 500ms;*/
+/*    text-decoration: none;*/
+/*    cursor: pointer;*/
+/*}*/
 
 .app-color, .text-span-color, .icons-color {
     color: #e6a87a;
@@ -260,5 +318,37 @@ html {
 
 .fc-direction-ltr .fc-daygrid-event.fc-event-end {
     color: #e6a87a;
+}
+
+
+/****BACK TO TOP ARROW*****/
+
+.scrollTop {
+    position: fixed;
+    width: 100%;
+    bottom: 20px;
+    right: 20px;
+    height: 20px;
+    justify-content: flex-end;
+    z-index: 1000;
+    cursor: pointer;
+    animation: fadeIn 0.3s;
+    transition: opacity 0.4s;
+    font-size: 30px;
+    opacity: 1;
+}
+
+.scrollTop:hover{
+    opacity: 1;
+    transition: opacity 0.4s;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 0.5;
+    }
 }
 
