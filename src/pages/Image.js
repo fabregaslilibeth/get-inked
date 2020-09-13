@@ -14,13 +14,13 @@ class Image extends React.Component {
 
   delete = () => {
     let id = this.props.details._id
-    axios.delete(`http://localhost:5000/gallery/${id}`)
+    axios.delete(`https://get-inked-backend.herokuapp.com/gallery/${id}`)
       .then(() => window.location.reload())
   }
 
   toggleDisplay = (e) => {
     e.preventDefault()
-    axios.put(`http://localhost:5000/gallery/display/${this.props.details._id}`)
+    axios.put(`https://get-inked-backend.herokuapp.com/gallery/display/${this.props.details._id}`)
       .then(({data}) =>
         this.setState({checked: data}))
   }

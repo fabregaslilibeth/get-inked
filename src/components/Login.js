@@ -19,7 +19,7 @@ class Login extends React.Component {
       password: this.passwordRef.current.value
     }
 
-    axios.post('http://localhost:5000/login', credentials)
+    axios.post('https://get-inked-backend.herokuapp.com/login', credentials)
       .then(({data}) => {
         if (data.status === 404) {
           this.setState({result: data.message})

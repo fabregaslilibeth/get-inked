@@ -10,7 +10,7 @@ class Packages extends React.Component {
   }
 
   componentDidMount() {
-    axios.get('http://localhost:5000/packages/')
+    axios.get('https://get-inked-backend.herokuapp.com/packages/')
       .then(({data}) => {
         this.setState({packages: data})
       }).catch(err => console.log(err))

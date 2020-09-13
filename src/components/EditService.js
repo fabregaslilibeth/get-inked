@@ -25,7 +25,7 @@ class EditService extends React.Component {
     this.nameRef = this.props.name
     this.descriptionRef = this.props.description
 
-    axios.get('http://localhost:5000/users')
+    axios.get('https://get-inked-backend.herokuapp.com/users')
       .then(({data}) => {
         data.forEach(user => {
           if (user._id === userFromStorage.id) {
@@ -61,7 +61,7 @@ class EditService extends React.Component {
       "X-Auth-Token": this.state.token
     };
 
-    axios.put(`http://localhost:5000/packages/update/${this.props.id}`, service)
+    axios.put(`https://get-inked-backend.herokuapp.com/packages/update/${this.props.id}`, service)
       .then(({data}) => {
         if (data.status === 404 || data.status === 401) {
           this.setState({result: data.message})

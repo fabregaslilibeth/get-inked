@@ -6,7 +6,7 @@ class Service extends React.Component {
 
   delete = () => {
     let id = this.props.details._id
-    axios.delete(`http://localhost:5000/packages/${id}`)
+    axios.delete(`https://get-inked-backend.herokuapp.com/packages/${id}`)
       .then(() => window.location.reload())
   }
 

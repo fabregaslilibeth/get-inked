@@ -13,7 +13,7 @@ class MyBookings extends React.Component {
     let user = JSON.parse(sessionStorage.getItem('user'))
     const bookings = []
 
-    axios.get('http://localhost:5000/contact/')
+    axios.get('https://get-inked-backend.herokuapp.com/contact/')
       .then(({data}) => {
         data.forEach(e => {
           if (e.userId === user.id) {

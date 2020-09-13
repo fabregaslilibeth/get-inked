@@ -14,7 +14,7 @@ class DisplayedReviews extends React.Component {
   componentDidMount() {
     let reviews = []
 
-    axios.get('http://localhost:5000/reviews/')
+    axios.get('https://get-inked-backend.herokuapp.com/reviews/')
       .then(({data}) => {
         data.forEach(review => {
           if (review.is_displayed === true) {

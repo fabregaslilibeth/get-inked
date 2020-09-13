@@ -10,7 +10,7 @@ class Gallery extends React.Component {
   }
 
   componentDidMount() {
-    axios.get('http://localhost:5000/gallery/')
+    axios.get('https://get-inked-backend.herokuapp.com/gallery/')
       .then(({data}) => {
         this.setState({images: data})
         console.log(this.state.images)

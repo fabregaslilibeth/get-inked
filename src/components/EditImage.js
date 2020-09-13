@@ -25,7 +25,7 @@ class EditImage extends React.Component {
     this.titleRef = this.props.title
     this.urlRef = this.props.url
 
-    axios.get('http://localhost:5000/users')
+    axios.get('https://get-inked-backend.herokuapp.com/users')
       .then(({data}) => {
         data.forEach(user => {
           if (user._id === userFromStorage.id) {
@@ -61,7 +61,7 @@ class EditImage extends React.Component {
       "X-Auth-Token": this.state.token
     };
 
-    axios.put(`http://localhost:5000/gallery/update/${this.props.id}`, image)
+    axios.put(`https://get-inked-backend.herokuapp.com/gallery/update/${this.props.id}`, image)
       .then(({data}) => {
         if (data.status === 404 || data.status === 401) {
           this.setState({result: data.message})

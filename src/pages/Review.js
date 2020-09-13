@@ -14,7 +14,7 @@ class Review extends React.Component {
 
   toggleDisplay = (e) => {
     e.preventDefault()
-    axios.put(`http://localhost:5000/reviews/update/${this.props.review._id}`)
+    axios.put(`https://get-inked-backend.herokuapp.com/reviews/update/${this.props.review._id}`)
       .then(({data}) =>
         this.setState({checked: data}))
   }

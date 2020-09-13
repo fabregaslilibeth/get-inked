@@ -11,7 +11,7 @@ class Reviews extends React.Component {
   componentDidMount() {
     let reviews = []
 
-    axios.get('http://localhost:5000/reviews/')
+    axios.get('https://get-inked-backend.herokuapp.com/reviews/')
       .then(({data}) => {
         data.forEach(review => {
           reviews.push(review)

@@ -22,7 +22,6 @@ connection.once('open', () => {
   console.log(`MongoDB connection properly established.`)
 })
 
-const exercisesRouter = require('./routes/exercises')
 const loginRouter = require('./routes/login')
 const usersRouter = require('./routes/users')
 const registerRouter = require('./routes/register')
@@ -31,7 +30,6 @@ const contactRouter = require('./routes/contact')
 const reviewRouter = require('./routes/reviews')
 const galleryRouter = require('./routes/gallery')
 
-app.use('/exercises', exercisesRouter)
 app.use('/login', loginRouter)
 app.use('/users', usersRouter)
 app.use('/register', registerRouter)

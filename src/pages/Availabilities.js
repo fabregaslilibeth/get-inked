@@ -19,7 +19,7 @@ class Availabilities extends React.Component {
 
     let booking = {}
 
-    axios.get('http://localhost:5000/contact/')
+    axios.get('https://get-inked-backend.herokuapp.com/contact/')
       .then(({data}) => {
         data.forEach(e => {
           booking = {title: e.name, date: new Date(e.date)}

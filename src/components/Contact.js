@@ -37,7 +37,7 @@ class Contact extends React.Component {
   }
 
   getPackages() {
-    axios.get('http://localhost:5000/packages/')
+    axios.get('https://get-inked-backend.herokuapp.com/packages/')
       .then(({data}) => {
         this.setState({packages: data})
       }).catch(err => console.log(err))
@@ -46,7 +46,7 @@ class Contact extends React.Component {
   getBookedDates() {
     const excludedDates = []
 
-    axios.get('http://localhost:5000/contact/')
+    axios.get('https://get-inked-backend.herokuapp.com/contact/')
       .then(({data}) => {
         data.forEach(e => {
           excludedDates.push(new Date(e.date))
@@ -89,7 +89,7 @@ class Contact extends React.Component {
 
     excludedDates.push(new Date(inquiry.date))
 
-    axios.post('http://localhost:5000/contact/add', inquiry)
+    axios.post('https://get-inked-backend.herokuapp.com/contact/add', inquiry)
       .then(({data}) => {
         if (data.status === 404) {
           this.setState({result: data.message})

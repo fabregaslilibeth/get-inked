@@ -2,8 +2,6 @@ import React from "react"
 import axios from "axios"
 
 class CreateExercise extends React.Component {
-  // constructor(props) {
-  //   super(props);
   usernameRef = React.createRef()
 
     state = {
@@ -31,7 +29,7 @@ class CreateExercise extends React.Component {
         date: '2020-09-05T03:58:02.837+00:00'
       }
 
-      axios.post('http://localhost:5000/exercises/add', exercise)
+      axios.post('https://get-inked-backend.herokuapp.com/exercises/add', exercise)
         .then(res => console.log(res.data))
     }
   // }

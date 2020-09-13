@@ -18,7 +18,7 @@ class MyReviews extends React.Component {
   componentDidMount() {
     let userId = JSON.parse(sessionStorage.getItem('user')).id
 
-    axios.get('http://localhost:5000/contact/')
+    axios.get('https://get-inked-backend.herokuapp.com/contact/')
       .then(({data}) => {
         data.forEach(e => {
           if (e.userId === userId) {
@@ -30,7 +30,7 @@ class MyReviews extends React.Component {
       })
 
     //check if user has already added a review
-    axios.get('http://localhost:5000/reviews/')
+    axios.get('https://get-inked-backend.herokuapp.com/reviews/')
       .then(({data}) => {
         data.forEach(e => {
           if (e.userId === userId) {
@@ -54,7 +54,7 @@ class MyReviews extends React.Component {
       message: this.messageRef.current.value,
     }
 
-    axios.post('http://localhost:5000/reviews/', review)
+    axios.post('https://get-inked-backend.herokuapp.com/reviews/', review)
       .then(({data}) => {
         if (data.status === 404) {
           this.setState({result: data.message})

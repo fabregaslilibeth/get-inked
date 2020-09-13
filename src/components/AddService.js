@@ -20,7 +20,7 @@ class AddService extends React.Component {
 
     this.setState({ token , modal: 'show'})
 
-    axios.get('http://localhost:5000/users')
+    axios.get('https://get-inked-backend.herokuapp.com/users')
       .then(({data}) => {
         data.forEach(user => {
           if (user._id === userFromStorage.id) {
@@ -48,7 +48,7 @@ class AddService extends React.Component {
       "X-Auth-Token": this.state.token
     };
 
-    axios.post('http://localhost:5000/packages', service)
+    axios.post('https://get-inked-backend.herokuapp.com/packages', service)
       .then(({data}) => {
         if (data.status === 404 || data.status === 401) {
           this.setState({result: data.message})

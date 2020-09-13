@@ -21,7 +21,7 @@ class GallerySlider extends React.Component {
   componentDidMount() {
     let gallery = []
 
-    axios.get('http://localhost:5000/gallery/')
+    axios.get('https://get-inked-backend.herokuapp.com/gallery/')
       .then(({data}) => {
         data.forEach(image => {
           if (image.is_displayed === true) {
